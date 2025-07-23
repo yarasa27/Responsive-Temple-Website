@@ -145,7 +145,18 @@ img {
 }
 
 /* Add blur header */
-
+.blur-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(353, 98%, 90%, .4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /*=============== HOME ===============*/
 .home{
@@ -298,6 +309,25 @@ img {
 }
 
 /* For 2K resolutions (2048 x 1152) */
-
+@media screen and (min-width: 2048px) and (min-height: 1100px){
+  .container{
+    max-width: 1300px;
+  }
+  .home__container{
+    height: 100vh;
+    display: grid;
+  }
+  .home__data{
+    align-self: center;
+  }
+}
 
 /* For taller devices */
+@media screen and (min-width: 1150px) and (min-height: 900px){
+  .home__container{
+    display: grid;
+  }
+  .home__data{
+    align-self: center;
+  }
+}
